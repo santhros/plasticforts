@@ -1,20 +1,47 @@
-CREATE TABLE star(star_id SERIAL PRIMARY KEY,
-                  galaxy_id INT NOT NULL,
-                  name VARCHAR(30) NOT NULL UNIQUE,
-                  description TEXT NOT NULL,
-                  star_type   VARCHAR(15),
-                  is_black_hole   BOOLEAN,
-                  diameter_kms    NUMBER(10,2),
-                  distance_in_liteyrs INT,
-                  quantity_of_planets INT,
-                  relative_brightness NUMBER(10,2),
-                  age_million_years  NUMBER(15,2),
-                  orbital_period_days NUMBER(8,2),
-                  CONSTRAINT fk_galaxy FOREIGN KEY(galaxy_id) REFERENCES galaxy(galaxy_id)
-                  );
+INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms, distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years, orbital_period_days) VALUES (1, 'Sun', 'Our Solar System Star', 'YELLOW MEDIAN', FALSE, 1384000, 0, 9, 6.1, 5000, 365.23);
+INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms, distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years, orbital_period_days) VALUES (1, 'K-PAX 231', 'Star of our fellow visitor', 'RED BRIGHT', FALSE, 937911, 19.36, 6, 8.33, 4938, 1401.17);
+INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms, distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years, orbital_period_days) VALUES (1, 'Alpha Centauri', 'Closest Star to the Earth', 'YELLOW MEDIAN', FALSE, 1031039, 8.18, 4, 4.1, 6013, 480.21);
+INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms, distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years, orbital_period_days) VALUES (1, 'ROMEO-810', 'New Star discovered close to the center of the Galaxy', 'RED DWARF', FALSE, 85098, 64013, 0, 1.97, 9450, 37.9);
+INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms, distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years, orbital_period_days) VALUES (1, 'TXS-1821', 'Star that is being absorbed by a Black Hole', 'YELLOW MEDIAN', TRUE, 1039384, 25191, 0, 5.19, 7398, 2601.32);
+INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms, distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years, orbital_period_days) VALUES (1, 'GSD-1029', 'Giant Star in close proximity to the edge of the Galaxy', 'RED GIANT', FALSE, 289391100, 97083, 3, 4.55, 3984, 1033.86);
 
-INSERT INTO star (galaxy_id, name, description, star_type, is_black_hole, diameter_kms,
-                  distance_in_liteyrs, quantity_of_planets, relative_brightness, age_million_years,
-                  orbital_period_days)
-VALUES (1, ‘Sun’, ‘Our Solar System Star’, ‘YELLOW MEDIAN’, FALSE, 1384000, 0, 9, 6.1, 4850),
-(1, ‘K-PAX’, 
+
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Mercury', 'Planet Mercury, one of the smallest of the solar system', 'INNER PLANET', 5300, 0, 5000, FALSE, FALSE, 0, 1.45);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Venus', 'The hottest planet of the Solar System', 'INNER PLANET', 9912.18, 0, 5000, FALSE, FALSE, 0, 0.94);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Earth', 'Our home!', 'INNER PLANET', 10031.31, 0, 5000, TRUE, TRUE, 1, 1);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Mars', 'The red planet', 'INNER PLANET', 9450.58, 0, 5000, FALSE, FALSE, 2, 1.12);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Jupiter', 'The giant gaseous planet', 'INNER PLANET', 68120.31, 0, 5000, FALSE, FALSE, 95, 32.04);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Saturn', 'The planet of the beautiful rings', 'INNER PLANET', 54018.49, 0, 5000, FALSE, FALSE, 83, 29.19);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Uranus', 'A cold planet', 'INNER PLANET', 20189.73, 0, 5000, FALSE, FALSE, 27, 46.83);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Neptune', 'An even colder planet', 'INNER PLANET', 16309.52, 0, 5000, FALSE, FALSE, 14, 89.1);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(1, 'Pluto', 'Basically a big asteroid or a very small planet', 'EXOPLANET', 1747.09, 0.08, 4813, FALSE, FALSE, 5, 284.75);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(2, 'K-PAX-P01', 'The planet of our fellow visitor', 'EXOPLANET', 14019.49, 14.17, 5800, TRUE, TRUE, 3, 1.65);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(3, 'ALPHA-CENTAURI-P03', 'A suspected planet with intelligent life', 'EXOPLANET', 21038.28, 8.18, 4942, TRUE, FALSE, 1, 1.03);
+INSERT INTO planet (star_id, name, description, planet_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, has_intelligent_life, quantity_of_moons, rotation_period_days) VALUES(3, 'ALPHA-CENTAURI-P08', 'Another suspected planet where one of its satellites may converge to life', 'EXOPLANET', 11034.88, 8.18, 4951, TRUE, FALSE, 8, 12.98);
+
+
+
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Moon', 'Our beautiful satellite', 'NO ATMOSPHERE', 2400, 0, 5000, FALSE, 1, 3);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Phobos', 'A small satellite that is getting apart from Mars', 'NO ATMOSPHERE', 890, 0, 5000, FALSE, 1.19, 4);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Deimos', 'A small satellite of Mars', 'NO ATMOSPHERE', 749, 0, 5000, FALSE, 1.33, 4);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Io', 'most volcanically active world in the solar system', 'ATMOSPHERE', 3091, 0, 5000, FALSE, 2.91, 5);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Europa', 'is thought to have an iron core, a rocky mantle and an ocean of salty water that may be one of the best places to look for life beyond Earth in our solar system.', 'ATMOSPHERE', 5943, 0, 5000, FALSE, 4.19, 5);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Ganimede', 'the largest moon in our solar system and the only moon with its own magnetic field.', 'ATMOSPHERE', 9310, 0, 5000, FALSE, 1.31, 5);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Callisto', 'the most heavily cratered object in our solar system.', 'ATMOSPHERE', 4014, 0, 5000, FALSE, 0.41, 5);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Enceladus', 'scientists have determined that Enceladus has most of the chemical ingredients needed for life, and likely has hydrothermal vents spewing out hot, mineral-rich water into its ocean.', 'ATMOSPHERE', 8091, 0, 5000, FALSE, 12.09, 6);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Titan', 'Titan is larger than the planet Mercury and is the second largest moon in our solar system.', 'ATMOSPHERE', 9288, 0, 5000, FALSE, 4.12, 6);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Dione', 'Dione is a small moon of 349 miles (562 km) in mean radius orbiting Saturn every 2.7 days', 'NO ATMOSPHERE', 562, 0, 5000, FALSE, 2.7, 6);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Iapetus', 'Iapetus has been called the yin and yang of the Saturn moons because its leading hemisphere has a reflectivity as dark as coal', 'NO ATMOSPHERE', 736, 0, 5000, FALSE, 21.01, 6);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Ariel', 'All of Uranus larger moons, including Ariel, are thought to consist mostly of roughly equal amounts of water ice and silicate rock.', 'NO ATMOSPHERE', 1034, 0, 5000, FALSE, 9.14, 7);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Belinda', 'Little is known about Belinda other than its size and orbital characteristics.', 'NO ATMOSPHERE', 218, 0, 5000, FALSE, 103.05, 7);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Oberon', 'Oberon is heavily cratered―similar to Umbriel―especially when compared to three other moons of Uranus', 'ATMOSPHERE', 501, 0, 5000, FALSE, 50.1, 7);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Miranda', 'Like Frankenstein s monster, Miranda looks like it was pieced together from parts that did not quite merge properly', 'NO ATMOSPHERE', 489, 0, 5000, FALSE, 21.04, 7);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Titania', 'Titania is Uranus largest moon. Images taken by Voyager 2 revealed signs that the moon was geologically active.', 'ATMOSPHERE', 1684, 0, 5000, FALSE, 2.19, 7);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Trito', 'Scientists think Triton is a Kuiper Belt Object captured by Neptune s gravity millions of years ago', 'NO ATMOSPHERE', 750, 0, 5000, FALSE, 0.98, 8);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('Nereid', 'Nereid is one of the outermost of Neptune s known moons and is among the largest', 'NO ATMOSPHERE', 801, 0, 5000, FALSE, 360, 8);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('KGYS-1001-E', 'A sattelite of K-PAX planet', 'NO ATMOSPHERE', 1973, 14.17, 5810, FALSE, 1.9, 10);
+INSERT INTO moon (name, description, moon_type, diameter_kms, distance_in_liteyrs, age_million_years, has_life, rotation_period_days, planet_id) VALUES ('ALPHA-CENTAURI-P08-S02', 'A satellite of Alpha Centauri third planet', 'ATMOSPHERE', 11031, 8.18, 4953, TRUE, 1.04, 12);
+
+INSERT INTO comet (name, description, comet_type, diameter_meters, orbital_period_days, galaxy_id) VALUES ('Halley', 'The most famous of all the comets that surround the solar system', 'ROCKY', 2088.17, 31083.31, 1);
+INSERT INTO comet (name, description, comet_type, diameter_meters, orbital_period_days, galaxy_id) VALUES ('Nibiru', 'A mythological celestial body that is thought to provoke an ancient disaster on Earth', 'ROCKY', 45083.84, 113494.77, 1);
+INSERT INTO comet (name, description, comet_type, diameter_meters, orbital_period_days, galaxy_id) VALUES ('OMA-001-AF0', 'A recently discovered comet that has an irregular orbit', 'ICE', 103934, 301483.4, 1);
